@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hobbify</string>
+    <string name="recipieName">Recipie Name</string>
+    <string name="ingredients">Ingredients</string>
+</resources>
