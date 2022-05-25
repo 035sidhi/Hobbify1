@@ -4,15 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Music">
+    tools:context=".Music"
+    android:background="@color/material_dynamic_primary30">
 
     <ListView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="38dp"
+            android:layout_height="48dp"
+            android:onClick="btnBack"
+            app:srcCompat="@drawable/ic_black"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-2dp"
+            tools:layout_editor_absoluteY="-12dp" />
 
         <ImageView
             android:id="@+id/imageView"

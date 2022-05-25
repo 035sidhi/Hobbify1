@@ -22,73 +22,45 @@
         android:textSize="35dp"
         android:textStyle="bold" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hobbies1"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/activity1"
+        android:layout_width="218dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/signin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-10dp"
-        android:layout_marginBottom="30dp"
-        android:backgroundTint="@color/material_dynamic_primary70"
-        android:onClick="btnNext"
-        android:text="Movie"
-        android:textColor="@color/black"
-        tools:ignore="MissingClass" />
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:text="Listening Music"
+        android:textColor="#FFFFFF" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hobbies2"
-        android:layout_width="wrap_content"
+
+    <Button
+        android:id="@+id/activity2"
+        android:layout_below="@+id/activity1"
+        android:layout_width="218dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/hobbies1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-10dp"
-        android:layout_marginBottom="30dp"
-        android:backgroundTint="@color/material_dynamic_primary70"
-        android:onClick="btnNext"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
         android:text="Reading"
-        android:textColor="@color/material_dynamic_primary80"
-        tools:ignore="MissingClass" />
+        android:textColor="#FFFFFF" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hobbies3"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/activity3"
+        android:layout_below="@+id/activity2"
+        android:layout_width="218dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/hobbies2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-10dp"
-        android:layout_marginBottom="30dp"
-        android:backgroundTint="@color/material_dynamic_primary70"
-        android:textColor="@color/material_dynamic_primary80"
-        android:text="Playing Games"
-        android:onClick="btnNext"
-        tools:ignore="MissingClass" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hobbies4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/hobbies3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="50dp"
-        android:backgroundTint="@color/material_dynamic_primary70"
-        android:textColor="@color/material_dynamic_primary80"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
         android:text="Travelling"
-        android:onClick="btnNext"
-        tools:ignore="MissingClass" />
+        android:textColor="#FFFFFF" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hobbies5"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/activity4"
+        android:layout_below="@+id/activity3"
+        android:layout_width="218dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/hobbies4"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="30dp"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/material_dynamic_primary70"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
         android:text="Cooking"
-        android:onClick="btnNext"
-        android:textColor="@color/material_dynamic_primary80"
-        tools:ignore="MissingClass" />
+        android:textColor="#FFFFFF" />
+
 </RelativeLayout>
