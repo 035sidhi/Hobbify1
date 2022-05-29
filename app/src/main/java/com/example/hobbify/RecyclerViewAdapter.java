@@ -12,18 +12,24 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyHolder> {
+   List<Integer> galleryList;
 
     private Context mContext;
     private List<Recipies> mData;
     private Object ViewGroup;
 
-    public RecyclerViewAdapter(Context mContext,List<Recipies> mData ){
+
+
+    public RecyclerViewAdapter(Context mContext, List<Recipies> mData, List<Integer> galleryList ){
         this.mContext = mContext;
         this.mData = mData;
-
+        this.galleryList = galleryList;
     }
     @NonNull
     @Override
@@ -50,7 +56,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public MyHolder(@NonNull View itemView) {
             super(itemView);
              recipieTitle = (TextView) itemView.findViewById(R.id.Recipie_Name);
-             img_recipie_thumbnail = (ImageView) itemView.findViewById((R.id.recipie_img_id));
+             img_recipie_thumbnail = (ImageView) itemView.findViewById(R.id.recipe_img_id);
              cardView = (CardView) itemView.findViewById(R.id.cardview_id);
 
         }
@@ -59,6 +65,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull MyHolder holder, int i) {
 
         holder.recipieTitle.setText(mData.get(i).getRecipieName());
+        Picasso.get().load(R.drawable.chicken_roll).into(holder.img_recipie_thumbnail);
+
         holder.img_recipie_thumbnail.setImageResource(mData.get(i).getThumbnail());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
