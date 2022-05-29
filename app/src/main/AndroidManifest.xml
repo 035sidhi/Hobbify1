@@ -18,7 +18,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".Reading"
+            android:name=".ReadingActivity"
             android:exported="false"
             android:label="Book Library" />
         <activity

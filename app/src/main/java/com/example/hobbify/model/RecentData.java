@@ -1,14 +1,13 @@
 package com.example.hobbify.model;
 
-public class RecentsData {
-
+public class RecentData {
 
     String placeName;
     String countryName;
     String price;
     Integer imageUrl;
 
-    public RecentsData(String placeName, String countryName, String price, Integer imageUrl) {
+    public RecentData(String placeName, String countryName, String price, Integer imageUrl) {
         this.placeName = placeName;
         this.countryName = countryName;
         this.price = price;

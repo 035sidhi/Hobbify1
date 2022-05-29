@@ -14,16 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hobbify.DetailsActivity;
 import com.example.hobbify.R;
-import com.example.hobbify.model.RecentsData;
+import com.example.hobbify.model.RecentData;
 
 import java.util.List;
 
 public class RecentsAdapter extends RecyclerView.Adapter<RecentsAdapter.RecentsViewHolder> {
 
     Context context;
-    List<RecentsData> recentsDataList;
+    List<RecentData> recentsDataList;
 
-    public RecentsAdapter(Context context, List<RecentsData> recentsDataList) {
+    public RecentsAdapter(Context context, List<RecentData> recentsDataList) {
         this.context = context;
         this.recentsDataList = recentsDataList;
     }
