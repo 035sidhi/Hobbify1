@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "842950323549",
+    "firebase_url": "https://recommendationpython-default-rtdb.firebaseio.com",
+    "project_id": "recommendationpython",
+    "storage_bucket": "recommendationpython.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842950323549:android:0dc39f069cf8d4ce86ccb4",
+        "android_client_info": {
+          "package_name": "com.example.hobbify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842950323549-k1aa16eous51jp1tjsdmu4mqpek9a7h7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASdMMLTVA_Ue0uurfL1VK0yhxSltZOq8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "842950323549-k1aa16eous51jp1tjsdmu4mqpek9a7h7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
