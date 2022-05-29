@@ -1,10 +1,10 @@
 package com.example.hobbify;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class RecipieActivity extends AppCompatActivity {
 
@@ -20,7 +20,7 @@ public class RecipieActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipie2);
 
 
-        mRecipieName = (TextView)findViewById(R.id.text_recipie);
+        mRecipieName = (TextView)findViewById(R.id.Recipie_Name);
         mRecipieIngredients = (TextView)findViewById(R.id.ingredients);
         mRecipieMethodTitle = (TextView)findViewById(R.id.method);
         mRecipie = (TextView)findViewById(R.id.recipie);

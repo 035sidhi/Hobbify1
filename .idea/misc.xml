@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../layout/custom_preview.xml" value="0.10462962962962963" />
         <entry key="app/src/main/res/drawable-v24/book_button_bg.xml" value="0.146" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.146" />
         <entry key="app/src/main/res/drawable-v24/ic_search_black_24dp.xml" value="0.146" />
@@ -28,13 +29,13 @@
         <entry key="app/src/main/res/layout/activity_music.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_play_song.xml" value="0.13247833251953128" />
         <entry key="app/src/main/res/layout/activity_reading.xml" value="0.1569046601111586" />
-        <entry key="app/src/main/res/layout/activity_recipie.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_recipie2.xml" value="0.19157608695652173" />
+        <entry key="app/src/main/res/layout/activity_recipie.xml" value="0.100201416015625" />
+        <entry key="app/src/main/res/layout/activity_recipie2.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_travel.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_trip_planner.xml" value="0.19157608695652173" />
         <entry key="app/src/main/res/layout/activity_update.xml" value="0.1" />
         <entry key="app/src/main/res/layout/anim.xml" value="0.1586582048957389" />
-        <entry key="app/src/main/res/layout/cardview_recipie.xml" value="0.19157608695652173" />
+        <entry key="app/src/main/res/layout/cardview_recipie.xml" value="0.1" />
         <entry key="app/src/main/res/layout/my_row.xml" value="0.11928174433518597" />
         <entry key="app/src/main/res/layout/recents_row_item.xml" value="0.1586582048957389" />
         <entry key="app/src/main/res/layout/recents_rw_item.xml" value="0.1586582048957389" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/b2g"
+    android:background="@drawable/bg22"
     tools:context=".MainActivity">
 
     <TextView
@@ -20,7 +20,7 @@
         android:gravity="center"
         android:text="Hobbies"
         android:textColor="#000"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:textStyle="bold" />
 
     <Button

@@ -14,11 +14,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
         android:ems="10"
-        android:hint="Book Title"
+        android:hint="@string/book_title"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/author_input2"
@@ -26,11 +27,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Book Author"
+        android:hint="@string/book_author"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_input2" />
+        app:layout_constraintTop_toBottomOf="@+id/title_input2"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/pages_input2"
@@ -38,18 +40,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Number of pages"
+        android:hint="@string/number_of_pages"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/author_input2" />
+        app:layout_constraintTop_toBottomOf="@+id/author_input2"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/update_button"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="40dp"
-        android:text="Update"
+        android:text="@string/update"
         android:textAllCaps="false"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="16dp"
-        android:text="Delete"
+        android:text="@string/delete"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -77,6 +80,6 @@
         app:srcCompat="@drawable/ic_black"
         tools:layout_editor_absoluteX="-3dp"
         tools:layout_editor_absoluteY="-7dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,UsingOnClickInXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

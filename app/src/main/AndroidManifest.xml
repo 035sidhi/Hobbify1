@@ -16,10 +16,6 @@
             android:name=".UpdateActivity"
             android:exported="false" />
 
-        <meta-data
-            android:name="com.google.android.actions"
-            android:resource="@xml/ic_empty" />
-
         <activity
             android:name=".Reading"
             android:exported="false"
@@ -62,9 +58,7 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>
