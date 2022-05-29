@@ -7,18 +7,18 @@ public class TopPlacesData {
     String price;
     Integer imageUrl;
 
+    public TopPlacesData(String placeName, String countryName, String price, Integer imageUrl) {
+        this.placeName = placeName;
+        this.countryName = countryName;
+        this.price = price;
+        this.imageUrl = imageUrl;
+    }
+
     public Integer getImageUrl() {
         return imageUrl;
     }
 
     public void setImageUrl(Integer imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public TopPlacesData(String placeName, String countryName, String price, Integer imageUrl) {
-        this.placeName = placeName;
-        this.countryName = countryName;
-        this.price = price;
         this.imageUrl = imageUrl;
     }
 

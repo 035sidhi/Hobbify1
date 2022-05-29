@@ -60,9 +60,9 @@ public class UpdateActivity extends AppCompatActivity {
 
     }
 
-    void getAndSetIntentData(){
-        if(getIntent().hasExtra("id") && getIntent().hasExtra("title") &&
-                getIntent().hasExtra("author") && getIntent().hasExtra("pages")){
+    void getAndSetIntentData() {
+        if (getIntent().hasExtra("id") && getIntent().hasExtra("title") &&
+                getIntent().hasExtra("author") && getIntent().hasExtra("pages")) {
             //Getting Data from Intent
             id = getIntent().getStringExtra("id");
             title = getIntent().getStringExtra("title");
@@ -73,13 +73,13 @@ public class UpdateActivity extends AppCompatActivity {
             title_input.setText(title);
             author_input.setText(author);
             pages_input.setText(pages);
-            Log.d("stev", title+" "+author+" "+pages);
-        }else{
+            Log.d("stev", title + " " + author + " " + pages);
+        } else {
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
         }
     }
 
-    void confirmDialog(){
+    void confirmDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Delete " + title + " ?");
         builder.setMessage("Are you sure you want to delete " + title + " ?");

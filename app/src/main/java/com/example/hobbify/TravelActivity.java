@@ -14,7 +14,7 @@ import com.example.hobbify.model.TopPlacesData;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Travel extends AppCompatActivity {
+public class TravelActivity extends AppCompatActivity {
 
     RecyclerView recentRecycler, topPlacesRecycler;
     RecentsAdapter recentsAdapter;
@@ -61,7 +61,7 @@ public class Travel extends AppCompatActivity {
         topPlacesRecycler = findViewById(R.id.top_places_recycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         topPlacesRecycler.setLayoutManager(layoutManager);
-        topPlacesAdapter = new TopPlacesAdapter(this,topPlacesDataList);
+        topPlacesAdapter = new TopPlacesAdapter(this, topPlacesDataList);
         topPlacesRecycler.setAdapter(topPlacesAdapter);
 
     }

@@ -38,16 +38,16 @@
             android:name=".RecipieActivity"
             android:exported="false" />
         <activity
-            android:name=".Recipie"
+            android:name=".RecipeActivity"
             android:exported="false" />
         <activity
-            android:name=".PlaySong"
+            android:name=".PlaySongActivity"
             android:exported="false" />
         <activity
-            android:name=".Music"
+            android:name=".MusicActivity"
             android:exported="false" />
         <activity
-            android:name=".Travel"
+            android:name=".TravelActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

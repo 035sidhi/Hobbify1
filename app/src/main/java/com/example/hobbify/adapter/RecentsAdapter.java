@@ -49,7 +49,7 @@ public class RecentsAdapter extends RecyclerView.Adapter<RecentsAdapter.RecentsV
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(context, DetailsActivity.class);
+                Intent i = new Intent(context, DetailsActivity.class);
                 context.startActivity(i);
             }
         });
@@ -61,7 +61,7 @@ public class RecentsAdapter extends RecyclerView.Adapter<RecentsAdapter.RecentsV
         return recentsDataList.size();
     }
 
-    public static final class RecentsViewHolder extends RecyclerView.ViewHolder{
+    public static final class RecentsViewHolder extends RecyclerView.ViewHolder {
 
         ImageView placeImage;
         TextView placeName, countryName, price;
