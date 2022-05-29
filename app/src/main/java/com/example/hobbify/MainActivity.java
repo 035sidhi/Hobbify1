@@ -1,4 +1,3 @@
-
 package com.example.hobbify;
 
 
@@ -18,14 +17,10 @@ public class MainActivity extends AppCompatActivity {
     private Button button4;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
 
         button1 = findViewById(R.id.activity1);
@@ -34,12 +29,11 @@ public class MainActivity extends AppCompatActivity {
         button4 = findViewById(R.id.activity4);
 
 
-
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, Music.class);
+                Intent intent = new Intent(MainActivity.this, MusicActivity.class);
                 startActivity(intent);
 
 
@@ -47,14 +41,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
-
 
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, Reading.class);
+                Intent intent = new Intent(MainActivity.this, ReadingActivity.class);
                 startActivity(intent);
 
 
@@ -62,14 +55,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
-
 
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, Travel.class);
+                Intent intent = new Intent(MainActivity.this, TravelActivity.class);
                 startActivity(intent);
 
 
@@ -79,12 +71,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, Recipie.class);
+                Intent intent = new Intent(MainActivity.this, RecipeActivity.class);
                 startActivity(intent);
 
             }

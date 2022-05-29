@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hobbify.adapter.RecentsAdapter;
 import com.example.hobbify.adapter.TopPlacesAdapter;
-import com.example.hobbify.model.RecentsData;
+import com.example.hobbify.model.RecentData;
 import com.example.hobbify.model.TopPlacesData;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Travel extends AppCompatActivity {
+public class TravelActivity extends AppCompatActivity {
 
     RecyclerView recentRecycler, topPlacesRecycler;
     RecentsAdapter recentsAdapter;
@@ -23,16 +23,16 @@ public class Travel extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_travel);
 
 
-        List<RecentsData> recentsDataList = new ArrayList<>();
-        recentsDataList.add(new RecentsData("AM Lake", "India", "From $200", R.drawable.recentimage1));
-        recentsDataList.add(new RecentsData("Nilgiri Hills", "India", "From $300", R.drawable.recentimage2));
-        recentsDataList.add(new RecentsData("AM Lake", "India", "From $200", R.drawable.recentimage1));
-        recentsDataList.add(new RecentsData("Nilgiri Hills", "India", "From $300", R.drawable.recentimage2));
-        recentsDataList.add(new RecentsData("AM Lake", "India", "From $200", R.drawable.recentimage1));
-        recentsDataList.add(new RecentsData("Nilgiri Hills", "India", "From $300", R.drawable.recentimage2));
+        List<RecentData> recentsDataList = new ArrayList<>();
+        recentsDataList.add(new RecentData("AM Lake", "India", "From $200", R.drawable.recentimage1));
+        recentsDataList.add(new RecentData("Nilgiri Hills", "India", "From $300", R.drawable.recentimage2));
+        recentsDataList.add(new RecentData("AM Lake", "India", "From $200", R.drawable.recentimage1));
+        recentsDataList.add(new RecentData("Nilgiri Hills", "India", "From $300", R.drawable.recentimage2));
+        recentsDataList.add(new RecentData("AM Lake", "India", "From $200", R.drawable.recentimage1));
+        recentsDataList.add(new RecentData("Nilgiri Hills", "India", "From $300", R.drawable.recentimage2));
 
         setRecentRecycler(recentsDataList);
 
@@ -46,7 +46,7 @@ public class Travel extends AppCompatActivity {
         setTopPlacesRecycler(topPlacesDataList);
     }
 
-    private void setRecentRecycler(List<RecentsData> recentsDataList) {
+    private void setRecentRecycler(List<RecentData> recentsDataList) {
 
         recentRecycler = findViewById(R.id.recent_recycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
@@ -61,7 +61,7 @@ public class Travel extends AppCompatActivity {
         topPlacesRecycler = findViewById(R.id.top_places_recycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         topPlacesRecycler.setLayoutManager(layoutManager);
-        topPlacesAdapter = new TopPlacesAdapter(this,topPlacesDataList);
+        topPlacesAdapter = new TopPlacesAdapter(this, topPlacesDataList);
         topPlacesRecycler.setAdapter(topPlacesAdapter);
 
     }

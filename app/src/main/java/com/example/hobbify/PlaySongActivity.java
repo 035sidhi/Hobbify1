@@ -1,7 +1,5 @@
 package com.example.hobbify;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -11,17 +9,12 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.File;
 import java.util.ArrayList;
 
-public class PlaySong extends AppCompatActivity {
-    @Override
-            protected void onDestroy() {
-            super.onDestroy();
-            mediaPlayer.stop();
-            mediaPlayer.release();
-            updateSeek.interrupt();
-    }
+public class PlaySongActivity extends AppCompatActivity {
     TextView textView;
     ImageView previous, play, next;
     ArrayList<File> songs;
@@ -30,6 +23,15 @@ public class PlaySong extends AppCompatActivity {
     int position;
     SeekBar seekBar;
     Thread updateSeek;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mediaPlayer.stop();
+        mediaPlayer.release();
+        updateSeek.interrupt();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +48,8 @@ public class PlaySong extends AppCompatActivity {
         textContent = intent.getStringExtra("currentSong");
         textView.setText(textContent);
         textView.setSelected(true);
-        position = intent.getIntExtra("position",0);
-        Uri uri  = Uri.parse(songs.get(position).toString());
+        position = intent.getIntExtra("position", 0);
+        Uri uri = Uri.parse(songs.get(position).toString());
         mediaPlayer = MediaPlayer.create(this, uri);
         mediaPlayer.start();
         seekBar.setMax(mediaPlayer.getDuration());
@@ -64,26 +66,25 @@ public class PlaySong extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-            mediaPlayer.seekTo(seekBar.getProgress());
+                mediaPlayer.seekTo(seekBar.getProgress());
             }
         });
         updateSeek = new Thread() {
-         @Override
+            @Override
             public void run() {
-             int currentPosition=0;
-             try {
-             while(currentPosition<mediaPlayer.getDuration()){
-                 currentPosition = mediaPlayer.getCurrentPosition();
-                 seekBar.setProgress(currentPosition);
-                 sleep(800);
+                int currentPosition = 0;
+                try {
+                    while (currentPosition < mediaPlayer.getDuration()) {
+                        currentPosition = mediaPlayer.getCurrentPosition();
+                        seekBar.setProgress(currentPosition);
+                        sleep(800);
 
 
-             }
-             }
-             catch (Exception e){
-               e.printStackTrace();
-             }
-         }
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
 
 
         };
@@ -92,11 +93,10 @@ public class PlaySong extends AppCompatActivity {
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mediaPlayer.isPlaying()){
+                if (mediaPlayer.isPlaying()) {
                     play.setImageResource(R.drawable.play);
                     mediaPlayer.pause();
-                }
-                else{
+                } else {
                     play.setImageResource(R.drawable.pause);
                     mediaPlayer.start();
                 }
@@ -110,17 +110,16 @@ public class PlaySong extends AppCompatActivity {
                 mediaPlayer.stop();
                 mediaPlayer.release();
                 if (position != 0) {
-                position = position - 1;
-                }
-                else{
+                    position = position - 1;
+                } else {
                     position = songs.size() - 1;
                 }
-                Uri uri  = Uri.parse(songs.get(position).toString());
+                Uri uri = Uri.parse(songs.get(position).toString());
                 mediaPlayer = MediaPlayer.create(getApplicationContext(), uri);
                 mediaPlayer.start();
                 play.setImageResource(R.drawable.pause);
                 seekBar.setMax(mediaPlayer.getDuration());
-                textContent =  songs.get(position).getName().toString();
+                textContent = songs.get(position).getName().toString();
                 textView.setText(textContent);
             }
         });
@@ -129,18 +128,17 @@ public class PlaySong extends AppCompatActivity {
             public void onClick(View v) {
                 mediaPlayer.stop();
                 mediaPlayer.release();
-                if (position != songs.size()-1) {
+                if (position != songs.size() - 1) {
                     position = position + 1;
-                }
-                else{
+                } else {
                     position = 0;
                 }
-                Uri uri  = Uri.parse(songs.get(position).toString());
+                Uri uri = Uri.parse(songs.get(position).toString());
                 mediaPlayer = MediaPlayer.create(getApplicationContext(), uri);
                 mediaPlayer.start();
                 play.setImageResource(R.drawable.pause);
                 seekBar.setMax(mediaPlayer.getDuration());
-                textContent =  songs.get(position).getName().toString();
+                textContent = songs.get(position).getName().toString();
                 textView.setText(textContent);
             }
         });

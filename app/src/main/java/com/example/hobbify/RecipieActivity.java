@@ -20,10 +20,10 @@ public class RecipieActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipie2);
 
 
-        mRecipieName = (TextView)findViewById(R.id.Recipie_Name);
-        mRecipieIngredients = (TextView)findViewById(R.id.ingredients);
-        mRecipieMethodTitle = (TextView)findViewById(R.id.method);
-        mRecipie = (TextView)findViewById(R.id.recipie);
+        mRecipieName = (TextView) findViewById(R.id.Recipie_Name);
+        mRecipieIngredients = (TextView) findViewById(R.id.ingredients);
+        mRecipieMethodTitle = (TextView) findViewById(R.id.method);
+        mRecipie = (TextView) findViewById(R.id.recipie);
 
         Intent intent = getIntent();
         String Title = intent.getExtras().getString("RecipieName");

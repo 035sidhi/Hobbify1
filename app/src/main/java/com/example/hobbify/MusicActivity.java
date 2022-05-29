@@ -21,11 +21,11 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import java.io.File;
 import java.util.ArrayList;
 
-public class Music extends AppCompatActivity {
-
+public class MusicActivity extends AppCompatActivity {
+    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ListView listView;
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
@@ -38,21 +38,21 @@ public class Music extends AppCompatActivity {
 
                         //Toast.makeText(Music.this, "Runtime permission given", Toast.LENGTH_SHORT).show();
                         ArrayList<File> mySongs = fetchSongs(Environment.getExternalStorageDirectory());
-                        String [] items = new String[mySongs.size()];
-                        for (int i = 0;i<mySongs.size();i++) {
-                           items[i]= mySongs.get(i).getName().replace(".mp3","");
+                        String[] items = new String[mySongs.size()];
+                        for (int i = 0; i < mySongs.size(); i++) {
+                            items[i] = mySongs.get(i).getName().replace(".mp3", "");
                         }
 
-                        ArrayAdapter<String> adapter= new ArrayAdapter<String>(Music.this,android.R.layout.simple_list_item_1, items);
+                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MusicActivity.this, android.R.layout.simple_list_item_1, items);
                         listView.setAdapter(adapter);
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                Intent intent = new Intent(Music.this, PlaySong.class);
+                                Intent intent = new Intent(MusicActivity.this, PlaySongActivity.class);
                                 String currentSong = listView.getItemAtPosition(position).toString();
-                                intent.putExtra("songList",mySongs);
-                                intent.putExtra("currentSong",currentSong);
-                                intent.putExtra("position",position);
+                                intent.putExtra("songList", mySongs);
+                                intent.putExtra("currentSong", currentSong);
+                                intent.putExtra("position", position);
                                 startActivity(intent);
 
 
@@ -68,28 +68,28 @@ public class Music extends AppCompatActivity {
 
                     @Override
                     public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
-                    permissionToken.continuePermissionRequest();
-                    
+                        permissionToken.continuePermissionRequest();
+
                     }
                 })
                 .check();
     }
+
     public ArrayList<File> fetchSongs(File file) {
         ArrayList arrayList = new ArrayList<>();
-        File [] songs = file.listFiles();
-        if (songs != null){
-            for(File myFile : songs){
-                if(!myFile.isHidden() && myFile.isDirectory()) {
+        File[] songs = file.listFiles();
+        if (songs != null) {
+            for (File myFile : songs) {
+                if (!myFile.isHidden() && myFile.isDirectory()) {
                     arrayList.addAll(fetchSongs(myFile));
-                }
-                else{
-                    if(myFile.getName().endsWith(".mp3") && !myFile.getName().startsWith(".")){
+                } else {
+                    if (myFile.getName().endsWith(".mp3") && !myFile.getName().startsWith(".")) {
                         arrayList.add(myFile);
                     }
                 }
             }
         }
-             return arrayList;
+        return arrayList;
     }
 
 

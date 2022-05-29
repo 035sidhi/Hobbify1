@@ -17,11 +17,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hobbify.adapter.CustomAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class Reading extends AppCompatActivity {
+public class ReadingActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     FloatingActionButton add_button;
@@ -35,7 +36,7 @@ public class Reading extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_reading);
 
         recyclerView = findViewById(R.id.recyclerView);
         add_button = findViewById(R.id.add_button);
@@ -44,12 +45,12 @@ public class Reading extends AppCompatActivity {
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Reading.this, AddActivity.class);
+                Intent intent = new Intent(ReadingActivity.this, AddActivity.class);
                 startActivity(intent);
             }
         });
 
-        myDB = new MyDatabaseHelper(Reading.this);
+        myDB = new MyDatabaseHelper(ReadingActivity.this);
         book_id = new ArrayList<>();
         book_title = new ArrayList<>();
         book_author = new ArrayList<>();
@@ -57,28 +58,28 @@ public class Reading extends AppCompatActivity {
 
         storeDataInArrays();
 
-        customAdapter = new CustomAdapter(Reading.this,this, book_id, book_title, book_author,
+        customAdapter = new CustomAdapter(ReadingActivity.this, this, book_id, book_title, book_author,
                 book_pages);
         recyclerView.setAdapter(customAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(Reading.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(ReadingActivity.this));
 
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 1){
+        if (requestCode == 1) {
             recreate();
         }
     }
 
-    void storeDataInArrays(){
+    void storeDataInArrays() {
         Cursor cursor = myDB.readAllData();
-        if(cursor.getCount() == 0){
+        if (cursor.getCount() == 0) {
             empty_imageview.setVisibility(View.VISIBLE);
             no_data.setVisibility(View.VISIBLE);
-        }else{
-            while (cursor.moveToNext()){
+        } else {
+            while (cursor.moveToNext()) {
                 book_id.add(cursor.getString(0));
                 book_title.add(cursor.getString(1));
                 book_author.add(cursor.getString(2));
@@ -98,23 +99,23 @@ public class Reading extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.delete_all){
+        if (item.getItemId() == R.id.delete_all) {
             confirmDialog();
         }
         return super.onOptionsItemSelected(item);
     }
 
-    void confirmDialog(){
+    void confirmDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Delete All?");
         builder.setMessage("Are you sure you want to delete all Data?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                MyDatabaseHelper myDB = new MyDatabaseHelper(Reading.this);
+                MyDatabaseHelper myDB = new MyDatabaseHelper(ReadingActivity.this);
                 myDB.deleteAllData();
                 //Refresh Activity
-                Intent intent = new Intent(Reading.this, MainActivity.class);
+                Intent intent = new Intent(ReadingActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

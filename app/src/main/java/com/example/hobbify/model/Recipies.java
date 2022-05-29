@@ -1,4 +1,4 @@
-package com.example.hobbify;
+package com.example.hobbify.model;
 
 public class Recipies {
 
@@ -16,19 +16,24 @@ public class Recipies {
         Thumbnail = thumbnail;
 
     }
-    public String getRecipieName (){
+
+    public String getRecipieName() {
         return RecipieName;
     }
-    public String getRecipieIngredients(){
+
+    public String getRecipieIngredients() {
         return RecipieIngredients;
     }
-    public String getRecipieMethodTitle(){
+
+    public String getRecipieMethodTitle() {
         return RecipieMethodTitle;
     }
-    public String getRecipie(){
+
+    public String getRecipie() {
         return Recipie;
     }
-    public int getThumbnail(){
+
+    public int getThumbnail() {
         return Thumbnail;
     }
 }

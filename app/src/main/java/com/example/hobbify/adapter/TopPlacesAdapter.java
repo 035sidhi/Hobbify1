@@ -49,7 +49,7 @@ public class TopPlacesAdapter extends RecyclerView.Adapter<TopPlacesAdapter.TopP
         return topPlacesDataList.size();
     }
 
-    public static final class TopPlacesViewHolder extends RecyclerView.ViewHolder{
+    public static final class TopPlacesViewHolder extends RecyclerView.ViewHolder {
 
         ImageView placeImage;
         TextView placeName, countryName, price;
