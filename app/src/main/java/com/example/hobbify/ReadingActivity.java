@@ -36,7 +36,7 @@ public class ReadingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_reading);
 
         recyclerView = findViewById(R.id.recyclerView);
         add_button = findViewById(R.id.add_button);
